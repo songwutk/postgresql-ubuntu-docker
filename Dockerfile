@@ -1,8 +1,8 @@
-FROM ubuntu:17.10
+FROM ubuntu:18.10
 MAINTAINER "Rene Gielen" <rgielen@apache.org>
 
-ENV LANG de_DE.UTF-8
-ENV PG_VERSION 9.6
+ENV LANG th_TH.UTF-8
+ENV PG_VERSION 11.0
 #ENV PG_PASSWORD
 ENV PG_BASE /var/lib/postgresql
 ENV PG_PASSWORD_FILE ${PG_BASE}/pwfile
@@ -40,7 +40,7 @@ RUN echo "host all  all    0.0.0.0/0  md5" >> $PG_CONFIG_DIR/pg_hba.conf \
       && echo "listen_addresses='*'" >> $PG_CONFIG_FILE
 
 USER postgres
-ENV LANG de_DE.UTF-8
+ENV LANG th_TH.UTF-8
 
 VOLUME ["${PG_BASE}"]
 
